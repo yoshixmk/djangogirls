@@ -1,5 +1,10 @@
 import dj_database_url
 
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -63,8 +68,3 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = False
-
-# try:
-#     from .local_settings import *
-# except ImportError:
-#     pass
