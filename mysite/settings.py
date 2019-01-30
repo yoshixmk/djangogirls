@@ -42,9 +42,7 @@ TEMPLATES = [
 
 # WSGI_APPLICATION = 'mysite.wsgi.application'
 
-DATABASES = {
-    'default': dj_database_url.config()
-}
+DATABASES['default'] = dj_database_url.config()
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -64,7 +62,7 @@ USE_L10N = True
 
 USE_TZ = False
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+# try:
+#     from .local_settings import *
+# except ImportError:
+#     pass
