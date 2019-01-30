@@ -1,4 +1,6 @@
 import dj_database_url
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Application definition
 
@@ -22,7 +24,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'mysite.urls'
+# ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
     {
@@ -51,6 +53,11 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 DEBUG = False
 
