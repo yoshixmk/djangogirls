@@ -1,10 +1,5 @@
 import dj_database_url
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
-
 DATABASES = {
     'default': dj_database_url.config()
 }
@@ -16,3 +11,8 @@ ALLOWED_HOSTS = ['*']
 STATIC_ROOT = 'staticfiles'
 
 DEBUG = False
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
