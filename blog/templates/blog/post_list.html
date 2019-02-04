@@ -2,11 +2,13 @@
 <head></head>
 <body>
 <h1>Django Girls Blog</h1>
-<p>published: 14.06.2014, 12:14</p>
 <div>
-    <p>query set</p>
     {% for post in posts %}
-        {{ post }}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
     {% endfor %}
 </div>
 </body>
